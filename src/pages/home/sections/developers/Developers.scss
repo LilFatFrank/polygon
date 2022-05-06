@@ -1,0 +1,60 @@
+@import "../../../../style/mixins.scss";
+
+.developers {
+  padding: 60px;
+  @include flex(column, center, center, 30px);
+  .adarsh,
+  .joshua {
+    img {
+      height: 450px;
+      width: 450px;
+      object-fit: cover;
+      position: relative;
+    }
+  }
+  .adarsh {
+    @include flex(row, flex-end, "", "");
+    align-self: baseline;
+    .info {
+      position: relative;
+      @include flex(column, flex-end, "", "");
+      left: -20px;
+      h6 {
+        color: var(--gray-dark);
+      }
+    }
+  }
+  .joshua {
+    @include flex(row, flex-end, "", "");
+    align-self: flex-end;
+    .info {
+      position: relative;
+      @include flex(column, flex-end, "", "");
+      right: -20px;
+      z-index: 1;
+      h6 {
+        color: var(--gray-dark);
+      }
+    }
+  }
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    padding: 20px;
+    .adarsh,
+    .joshua {
+      align-self: center;
+      .info {
+        left: 0;
+      }
+      img {
+        width: 300px;
+        height: 300px;
+      }
+    }
+    .adarsh {
+      @include flex(column, center, "", "");
+    }
+    .joshua {
+      @include flex(column-reverse, center, "", "");
+    }
+  }
+}

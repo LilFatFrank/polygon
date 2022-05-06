@@ -1,0 +1,21 @@
+@import "../../../../style/mixins.scss";
+
+.div {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background: var(--gray);
+  margin: 0 10px;
+}
+.container {
+  @include flex(column, center, center, 10px);
+  .row {
+    white-space: nowrap;
+    overflow: hidden;
+    overflow: auto;
+    width: 100%;
+  }
+  .row::-webkit-scrollbar {
+    width: 0;
+  }
+}

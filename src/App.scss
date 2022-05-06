@@ -1,0 +1,15 @@
+@import "./style/variables.scss";
+
+#root {
+  background: transparent;
+}
+
+.common-gradient {
+  background: linear-gradient(
+    to right,
+    var(--white),
+    var(--yellow),
+    var(--pink),
+    var(--white)
+  );
+}

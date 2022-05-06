@@ -1,0 +1,21 @@
+@import "../../../../style/mixins.scss";
+.loremIpsum {
+  padding: 60px 10%;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  @include flex(row, center, "", 30px);
+  .loremIpsum-1 {
+    @include flex(column, flex-start, center, "");
+    .typography {
+      position: relative;
+      bottom: -80px;
+      z-index: 1;
+    }
+    img {
+      width: 796px;
+      height: 448px;
+      position: relative;
+    }
+  }
+}

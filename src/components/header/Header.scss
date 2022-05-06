@@ -1,0 +1,10 @@
+@import "../../style/mixins.scss";
+
+.header {
+  background: transparent;
+  @include flex(row, center, space-between, "");
+  padding: 35px 65px;
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    @include flex(column, flex-start, center, 20px);
+  }
+}

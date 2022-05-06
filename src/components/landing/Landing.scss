@@ -1,0 +1,81 @@
+@import "../../style/mixins.scss";
+
+.landing {
+  @include flex(row, flex-start, center, 60px);
+  height: calc(100% - 94px);
+  .content {
+    @include flex(column, center, flex-start, 20px);
+    max-width: 400px;
+    .button {
+      box-shadow: none !important;
+      border-radius: 25px !important;
+      font-size: 18px;
+      background: var(--white);
+      color: var(--black);
+      width: 100%;
+      font-weight: bold;
+      &:hover {
+        /* copied this from figma */
+        background: radial-gradient(
+            174.14% 393.95% at 13.8% -108.62%,
+            #ff0000 0%,
+            rgba(255, 0, 0, 0) 100%
+          ),
+          linear-gradient(
+            92.5deg,
+            #fefeff 1.23%,
+            #4e3fff 35.96%,
+            #306aff 63.66%,
+            #071f9e 97.9%
+          ),
+          #ffffff;
+        color: white;
+      }
+    }
+  }
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    @include flex(column-reverse, center, center, 60px);
+    height: calc(100% - 94px);
+    padding: 20px;
+  }
+}
+.loading {
+  padding: 20px;
+  @include flex(column, center, center, 60px);
+  height: calc(100% - 94px);
+  .dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    .dot-1, .dot-2, .dot-3 {
+      width: 3vw;
+      height: 3vw;
+      border-radius: 100%;
+      margin: 2vw;
+      background: var(--black);
+      animation: load 3s linear infinite;
+    }
+    .dot-2 {
+      animation-delay: 1s;
+    }
+    .dot-3 {
+      animation-delay: 2s;
+    }
+    @keyframes load {
+      0%, 100% {
+        opacity: 0.5;
+      }
+      50% {
+        opacity: 1;
+      }
+  }
+  }
+
+  @keyframes l {
+    to {
+      clip-path: inset(0 -1ch 0 0);
+    }
+  }
+}
